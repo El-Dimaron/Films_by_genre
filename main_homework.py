@@ -39,8 +39,7 @@ for film in films_data:		# iteration through each film
 			film_genre_obj = open(csv_file_path, "a")
 			csv.writer(film_genre_obj).writerow(csv_elements_list)
 
-os.chdir("Film Genres")
-
 for directory in os.listdir():
 	if not os.listdir(directory):
-		os.mkdir(f"{directory}/.gitkeep")
+		file_obj = open(f"{directory}/.gitkeep", "w")
+		file_obj.close()
